@@ -11,3 +11,5 @@ Install/use:
 - run the update watcher in your entry script: `<your-python-package-path>/django_simple_reload/update_watcher.py`
 
 Config: only `USE_AUTO_RELOAD` (bool) to toggle the script without removing the setup
+
+> Currently the 'update_watcher.py' is customized to be used for webpack-stats files, adjust accordingly to your use-case
