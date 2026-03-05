@@ -21,7 +21,7 @@ def trigger_reload(request):
     return HttpResponse("OK")
 
 
-urlpatters = [
+urlpatterns = [
     path("api/auto-reload/reload-script.js", get_reload_script),
     path("api/auto-reload/trigger-reload", trigger_reload, name="trigger-reload"),
 ]

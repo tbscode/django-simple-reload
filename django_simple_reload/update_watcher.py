@@ -3,7 +3,8 @@ import time
 
 import requests
 
-if __name__ == "__main__":
+
+def main():
     FRONTEND_TO_WATCH = ["main_frontend", "admin_panel_frontend"]
 
     def try_get_timestamp(name):
@@ -18,7 +19,7 @@ if __name__ == "__main__":
         time.sleep(4.0)
         while True:
             time.sleep(1.0)
-            f = os.path.getmtime("/front/webpack-stats/main_frontend/webpack-stats.json")
+            os.path.getmtime("/front/webpack-stats/main_frontend/webpack-stats.json")
 
             changed = False
             new_frontend_timestamps = {name: try_get_timestamp(name) for name in FRONTEND_TO_WATCH}
@@ -37,3 +38,7 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         pass
+
+
+if __name__ == "__main__":
+    main()

@@ -11,6 +11,6 @@ TAG = """<script type='text/javascript' async src='/api/auto-reload/reload-scrip
 def get_reload_script_tag():
     from django.conf import settings
 
-    if not settings.USE_AUTO_RELOAD:
+    if not getattr(settings, "USE_AUTO_RELOAD", False):
         return ""
     return mark_safe(TAG)
